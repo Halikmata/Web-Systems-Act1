@@ -22,6 +22,7 @@ body {
   align-items: center;
   height: 100vh;
 }
+/* Footer */
 footer {
   position: fixed;
   height: 120px;
@@ -95,14 +96,25 @@ footer {
 .social-icons a {
   color: white;
   text-decoration: none; 
-  /* Add other styling properties as needed */
 }
 
 /* Hover effect for the links */
 .social-icons a:hover {
   color: #ffffff; /* Change color on hover if desired */
-  /* Add additional hover effects */
 }
 .icon-link {
-  margin-right: 15px; /* Adjust the value as needed for the desired spacing */
+  margin-right: 15px;
+}
+/* gallery */
+.photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.photo-grid img {
+  width: calc(33.333% - 10px); /* Adjust width and margin as needed */
+  margin: 5px;
+  border-radius: 8px;
 }
