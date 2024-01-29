@@ -10,15 +10,17 @@
 <body>
     <div class="navbar">
         <section class="navbar">
-            <a href="index.html" class="btn"> Home </a>
-            <a href="profile.html" class="btn" id="active"> Profile </a>
-            <a href="gallery.html" class="btn"> Gallery </a>
-            <a href="contactUs.html" class="btn"> Contact Us </a> 
+            <a href="index.php" class="btn"> Home </a>
+            <a href="profile.php" class="btn" id="active"> Profile </a>
+            <a href="gallery.php" class="btn"> Gallery </a>
+            <a href="contactUs.php" class="btn"> Contact Us </a> 
           </section>
     </div>
-    <p>
-        Profile
-    </p>
+    <section class="container">
+        <div class="photo-grid">
+            <img src="images/Lucifer1.jpg" alt="">
+        </div>
+    </section>
 </body>
 <script src="footer.js"></script>
 </html>

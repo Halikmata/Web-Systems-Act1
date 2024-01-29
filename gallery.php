@@ -10,15 +10,22 @@
 <body>
     <div class="navbar">
         <section class="navbar">
-            <a href="index.html" class="btn"> Home </a>
-            <a href="profile.html" class="btn"> Profile </a>
-            <a href="gallery.html" class="btn" id="active"> Gallery </a>
-            <a href="contactUs.html" class="btn"> Contact Us </a>
+            <a href="index.php" class="btn"> Home </a>
+            <a href="profile.php" class="btn"> Profile </a>
+            <a href="gallery.php" class="btn" id="active"> Gallery </a>
+            <a href="contactUs.php" class="btn"> Contact Us </a>
         </section>
     </div>
-    <p>
-        Gallery
-    </p>
+    <section class="container" style="margin-top: 55px">
+        <h4>
+            Lucifer Morningstar
+        </h4>
+        <div class="photo-grid">
+            <img src="images/Lucifer1.jpg" alt="">
+            <img src="images/Lucifer2.jpg" alt="">
+            <img src="images/Lucifer3.jpg" alt="">
+        </div>
+    </section>
 </body>
 <script src="footer.js"></script>
 </html>

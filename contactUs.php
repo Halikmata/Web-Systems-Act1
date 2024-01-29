@@ -10,10 +10,10 @@
 <body>
     <div class="navbar">
         <section class="navbar">
-            <a href="index.html" class="btn"> Home </a>
-            <a href="profile.html" class="btn"> Profile </a>
-            <a href="gallery.html" class="btn"> Gallery </a>
-            <a href="contactUs.html" class="btn" id="active"> Contact Us </a>
+            <a href="index.php" class="btn"> Home </a>
+            <a href="profile.php" class="btn"> Profile </a>
+            <a href="gallery.php" class="btn"> Gallery </a>
+            <a href="contactUs.php" class="btn" id="active"> Contact Us </a>
           </section>
     </div>
     <p>
