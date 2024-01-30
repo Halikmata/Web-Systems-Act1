@@ -10,7 +10,7 @@
 <body>
     <div class="navbar">
         <section class="navbar">
-            <a href="index.php" class="btn"> Home </a>
+            <a href="home.php" class="btn"> Home </a>
             <a href="profile.php" class="btn" id="active"> Profile </a>
             <a href="gallery.php" class="btn"> Gallery </a>
             <a href="contactUs.php" class="btn"> Contact Us </a>
