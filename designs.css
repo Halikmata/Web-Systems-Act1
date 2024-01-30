@@ -119,3 +119,29 @@ footer {
   margin: 5px;
   border-radius: 8px;
 }
+
+/* Profile */
+.container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.profile-info {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.profile-info h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.profile-info p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
