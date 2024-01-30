@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $responseMessage = '';
 
     // Retrieve values from the form
-    $profilePicture = $_FILES["profilePicture"]["name"];
+    $profilePicture = $_FILES["profilePicture"];
     $email = $_POST["signupEmail"];
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
@@ -33,10 +33,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Example using PDO
         try {
+            // Move the uploaded file to the images directory
+            $targetDirectory = "";
+            $targetFile = $targetDirectory . basename($profilePicture["name"]);
+
+            move_uploaded_file($profilePicture["tmp_name"], $targetFile);
+
+            // Hash the password before storing in the database
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
+            // Insert user details into the database
             $stmt = $conn->prepare("INSERT INTO users (profile_picture, email, first_name, last_name, age, gender, hobbies, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$profilePicture, $email, $firstName, $lastName, $age, $gender, $hobbies, $hashedPassword]);
+            $stmt->execute([$targetFile, $email, $firstName, $lastName, $age, $gender, $hobbies, $hashedPassword]);
 
             $responseMessage = "User registered successfully!";
         } catch (PDOException $e) {
