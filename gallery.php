@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <!-- logout -->
+    <div class="logout-container">
+        <a href="access/logout.php" class="btn"> Log-out </a>
+    </div>
     <div class="navbar">
         <section class="navbar">
             <a href="home.php" class="btn"> Home </a>

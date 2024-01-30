@@ -9,6 +9,11 @@
 </head>
 
 <body>
+    <!-- logout -->
+    <div class="logout-container">
+        <a href="access/logout.php" class="btn"> Log-out </a>
+    </div>
+
     <header>
         <div class="navbar">
             <section class="navbar">
@@ -21,8 +26,8 @@
     </header>
     <br><br><br><br><br><br><br><br><br>
     <div>
-        <h1>This is the Home Page</h1>
-        <p>BSCS3 B2</p>
+        <h1>There is no hate quite like christian love</h1>
+        <p>Mori memorias non somnia</p>
     </div>
 </body>
 <script src="footer.js"></script>
