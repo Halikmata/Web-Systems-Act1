@@ -100,7 +100,7 @@ footer {
 
 /* Hover effect for the links */
 .social-icons a:hover {
-  color: #ffffff; /* Change color on hover if desired */
+  color: #ffffff; 
 }
 .icon-link {
   margin-right: 15px;
@@ -115,7 +115,7 @@ footer {
 }
 
 .photo-grid img {
-  width: calc(33.333% - 10px); /* Adjust width and margin as needed */
+  width: calc(33.333% - 10px); /*width and margin*/
   margin: 5px;
   border-radius: 8px;
 }
@@ -202,4 +202,25 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* logout button */
+.logout-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #e22121;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logout-container a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Adjust the styles for consistency */
+.logout-container:hover {
+  background-color: #a80f28;
 }
