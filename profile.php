@@ -13,14 +13,19 @@
             <a href="index.php" class="btn"> Home </a>
             <a href="profile.php" class="btn" id="active"> Profile </a>
             <a href="gallery.php" class="btn"> Gallery </a>
-            <a href="contactUs.php" class="btn"> Contact Us </a> 
-          </section>
+            <a href="contactUs.php" class="btn"> Contact Us </a>
+        </section>
     </div>
     <section class="container">
         <div class="photo-grid">
             <img src="images/Lucifer1.jpg" alt="">
+            <div class="profile-info">
+                <h1>Jason Maverick D. Serencio</h1>
+                <p>Project Manager | Quality Assurance</p>
+                <p>I excel at people management because I love working in a group.</p>
+            </div>
         </div>
-    </section>
+    </section> 
 </body>
 <script src="footer.js"></script>
 </html>
