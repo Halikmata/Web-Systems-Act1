@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["signupEmail"];
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
+    $mobileNumber = $_POST["mobileNumber"];
     $age = $_POST["age"];
     $gender = $_POST["gender"];
     $hobbies = $_POST["hobbies"];
@@ -25,30 +26,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $checkEmailQuery = $conn->prepare("SELECT * FROM users WHERE email = ?");
     $checkEmailQuery->execute([$email]);
 
-    if ($checkEmailQuery->rowCount() > 0) {
-        $responseMessage = "Email is already registered.";
+    if (!preg_match('/^09[0-9]{9}$/', $mobileNumber)) {
+        $responseMessage = "Invalid mobile number. Please enter a valid 11-digit mobile number starting with '09'.";
     } else {
-        // Add the user to the database if validation passes
-        // Use prepared statements to prevent SQL injection
+        if ($checkEmailQuery->rowCount() > 0) {
+            $responseMessage = "Email is already registered.";
+        } else {
+            try {
+                // Generate a unique filename for the profile picture to avoid overwriting
+                $uniqueFilename = uniqid() . '_' . $profilePicture["name"];
+                $targetDirectory = "../images/profile_pics/";
+                $targetFile = $targetDirectory . $uniqueFilename;
 
-        // Example using PDO
-        try {
-            // Move the uploaded file to the images directory
-            $targetDirectory = "";
-            $targetFile = $targetDirectory . basename($profilePicture["name"]);
+                // Move the uploaded file to the images directory
+                move_uploaded_file($profilePicture["tmp_name"], $targetFile);
 
-            move_uploaded_file($profilePicture["tmp_name"], $targetFile);
+                // Hash the password before storing in the database
+                $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-            // Hash the password before storing in the database
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+                // Insert user details into the database
+                $stmt = $conn->prepare("INSERT INTO users (profile_picture, email, first_name, last_name, mobile_number, age, gender, hobbies, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                $stmt->execute([$uniqueFilename, $email, $firstName, $lastName, $mobileNumber, $age, $gender, $hobbies, $hashedPassword]);
 
-            // Insert user details into the database
-            $stmt = $conn->prepare("INSERT INTO users (profile_picture, email, first_name, last_name, age, gender, hobbies, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            $stmt->execute([$targetFile, $email, $firstName, $lastName, $age, $gender, $hobbies, $hashedPassword]);
-
-            $responseMessage = "User registered successfully!";
-        } catch (PDOException $e) {
-            $responseMessage = "Error: " . $e->getMessage();
+                $responseMessage = "User registered successfully!";
+            } catch (PDOException $e) {
+                $responseMessage = "Error: " . $e->getMessage();
+            }
         }
     }
 
@@ -57,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Pass the response message to JavaScript for displaying a pop-up
     echo "<script>
             alert('" . $responseMessage . "');
-            window.location.href = '../index.php';
+            window.location.href = '../pages/index.php';
           </script>";
 }
 ?>
