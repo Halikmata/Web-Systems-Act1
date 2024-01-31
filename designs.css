@@ -53,8 +53,6 @@ footer {
   text-decoration: none;
   color: #fff;
 }
-
-/* Change font color for links on hover */
 .footer-links a:hover {
   color: #74C69D;
 }
@@ -69,7 +67,6 @@ footer {
   border-radius: 15px;
 
 }
-
 .navbar a {
   margin: 5px;
   float: none;
@@ -92,13 +89,11 @@ footer {
   background-color: whitesmoke;
   color: black;
 }
-
+/* social icons */
 .social-icons a {
   color: white;
   text-decoration: none; 
 }
-
-/* Hover effect for the links */
 .social-icons a:hover {
   color: #ffffff; 
 }
@@ -113,13 +108,11 @@ footer {
   margin: 0 auto;
   margin-top: 15px;
 }
-
 .photo-grid img {
   width: calc(33.333% - 10px); /*width and margin*/
   margin: 5px;
   border-radius: 8px;
 }
-
 /* Profile */
 .container {
   margin-top: 20px;
@@ -134,18 +127,15 @@ footer {
   max-width: 600px;
   margin: 0 auto;
 }
-
 .profile-info h1 {
   font-size: 24px;
   margin-bottom: 10px;
 }
-
 .profile-info p {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
 }
-
 /* log-in and sign-up */
 .login-signup-form {
   max-width: 400px;
@@ -155,55 +145,45 @@ footer {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 h2 {
   margin-bottom: 20px;
   font-size: 1.5em;
 }
-
 label {
   margin-top: 10px;
   font-weight: bold;
 }
-
 input, select, button {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-top: 5px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
 button {
   background-color: #4CAF50;
   color: white;
   cursor: pointer;
 }
-
 button:hover {
   background-color: #45a049;
 }
-
 p {
   margin-top: 15px;
 }
-
 a {
   color: #007BFF;
   cursor: pointer;
 }
-
 a:hover {
   text-decoration: underline;
 }
-
 /* logout button */
 .logout-container {
   position: fixed;
@@ -214,14 +194,59 @@ a:hover {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 .logout-container a {
   color: white;
   text-decoration: none;
 }
-
-/* Adjust the styles for consistency */
 .logout-container:hover {
   background-color: #a01318;
 }
 
+/* Contact container */
+.contact-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-container label {
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.contact-container input,
+.contact-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-container button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contact-container button:hover {
+  background-color: #45a049;
+}
