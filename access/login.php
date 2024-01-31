@@ -10,11 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["loginEmail"];
     $password = $_POST["loginPassword"];
 
-    // Add your validation logic here
-
-    // Check if the user exists in the database and the password is correct
-    // Use prepared statements to prevent SQL injection
-
     // Example using PDO
     try {
         $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
@@ -23,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($user && password_verify($password, $user["password"])) {
             $_SESSION["user_id"] = $user["id"];
-            header("Location: ../home.php");
+            header("Location: ../pages/index.php");
         } else {
             echo "Invalid email or password";
         }
