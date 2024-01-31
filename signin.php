@@ -64,11 +64,11 @@
             <input type="password" id="confirmPassword" name="confirmPassword" required>
 
             <button type="submit" id="signupSubmitButton" disabled>Sign Up</button>
-            <p>Already have an account? <a href="#" onclick="toggleForm('loginForm')">Login here</a></p>
+            <p>Already have an account? <a href="#" onclick="toggleForm('loginForm')">Log-in here</a></p>
         </form>
     </div>
 
-    <script src="forms.js"></script>
+    <script src="scripts/forms.js"></script>
     
     <script>
         var signupSubmitButton = document.getElementById("signupSubmitButton");
