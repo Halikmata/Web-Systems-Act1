@@ -207,9 +207,9 @@ a:hover {
 /* logout button */
 .logout-container {
   position: fixed;
+  background-color: red;
   top: 20px;
   right: 20px;
-  background-color: #e22121;
   padding: 10px 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -222,5 +222,6 @@ a:hover {
 
 /* Adjust the styles for consistency */
 .logout-container:hover {
-  background-color: #a80f28;
+  background-color: #a01318;
 }
+
