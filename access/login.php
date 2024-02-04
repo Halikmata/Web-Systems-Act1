@@ -18,7 +18,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($user && password_verify($password, $user["password"])) {
             $_SESSION["user_id"] = $user["id"];
-            header("Location: ../pages/index.php");
+
+            // Check if there's a redirect cookie
+            if (isset($_COOKIE['redirect_page'])) {
+                $redirectPage = $_COOKIE['redirect_page'];
+                // Delete the redirect cookie
+                setcookie('redirect_page', '', time() - 3600, '/');
+                header("Location: $redirectPage");
+                exit();
+            } else {
+                // If no redirect cookie, redirect to the default page
+                header("Location: ../index.php");
+                exit();
+            }
         } else {
             echo "Invalid email or password";
         }
@@ -29,3 +41,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn = null;
 }
 ?>
+
+<!-- Check if user is logging in for cookies -->
