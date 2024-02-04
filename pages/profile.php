@@ -2,6 +2,16 @@
 session_start();
 require_once('../db.php');
 
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    // Store the current page in a cookie
+    setcookie('redirect_page', $_SERVER['REQUEST_URI'], time() + 3600, '/');
+    
+    // Redirect to the sign-in page
+    header('Location: ../signin.php');
+    exit();
+}
+
 // Check if the user is not logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../signin.php");
@@ -49,7 +59,7 @@ try {
     </div>
     <div class="navbar">
         <section class="navbar">
-            <a href="index.php" class="btn"> Home </a>
+            <a href="../index.php" class="btn"> Home </a>
             <a href="profile.php" class="btn" id="active"> Profile </a>
             <a href="gallery.php" class="btn"> Gallery </a>
             <a href="contactUs.php" class="btn"> Contact Us </a>
@@ -75,5 +85,5 @@ try {
         </div>
     </section>
 </body>
-<script src="../footer.js"></script>
+<script src="../scripts/footer.js"></script>
 </html>
