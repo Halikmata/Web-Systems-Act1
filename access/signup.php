@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Pass the response message to JavaScript for displaying a pop-up
     echo "<script>
             alert('" . $responseMessage . "');
-            window.location.href = 'index.php';
+            window.location.href = '../signin.php';
           </script>";
 }
 ?>
